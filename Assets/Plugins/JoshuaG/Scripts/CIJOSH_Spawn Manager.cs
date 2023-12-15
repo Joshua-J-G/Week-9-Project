@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
+
+using System;
+using System.Linq;
+#if UNITY_EDITOR
+using UnityEditor.IMGUI.Controls;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using UnityEditor.PackageManager.UI;
-using System;
-using System.Linq;
-using UnityEditor.IMGUI.Controls;
-
+using UnityEditor;
+#endif
 [Serializable]
 public struct Prefabs
 {
@@ -18,7 +21,7 @@ public struct Prefabs
 }
 
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(JOSH_SpanwerManager))]
 public class CIJOSH_SpawnManager : Editor
 {
@@ -180,3 +183,5 @@ public class CIJOSH_SpawnManager : Editor
     
 
 }
+
+#endif
